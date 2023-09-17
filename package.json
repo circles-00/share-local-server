@@ -1,6 +1,6 @@
 {
   "name": "share-local-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "author": "Nikola Krezeski<nkrezeski1@gmail.com>",
   "license": "MIT",
@@ -8,9 +8,10 @@
   "scripts": {
     "dev": "tsc-watch --onSuccess \"node dist/index.js\"",
     "prettier": "prettier --write \"src/**/*.ts\"",
-    "build": "yarn tsc",
-    "start": "yarn build && node dist/index.js",
-    "postinstall": "yarn build"
+    "tsc": "tsc",
+    "build": "npx tsc",
+    "start": "npm run build && node dist/index.js",
+    "postinstall": "npm run tsc"
   },
   "bin": {
     "share-local-server": "./dist/index.js"
